@@ -10,7 +10,9 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    // your code here
-
+    //for(let i = 0, j = ''; ++i <= 100; console.log( i%5 ? j || i : j + "buzz" ) ) j = i % 3 ? "" : "fizz";
+    for(i=0;++i<=100;console.log(i%5?j||i:j+"buzz"))j=i%3?"":"fizz"
 })();
+
+
+

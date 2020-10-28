@@ -12,5 +12,7 @@
 (function() {
 
     // your code here
+    let name = prompt();
+    alert(`Hello ${name} !`);
 
 })();

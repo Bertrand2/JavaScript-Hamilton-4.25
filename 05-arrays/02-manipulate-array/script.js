@@ -24,6 +24,12 @@
         "cerise",
     ];
 
-    // your code here
+    const button = document.getElementById("run");
+    button.addEventListener("click", ()=>{
+        fruits = fruits.slice(1 , fruits.length-1);
+        fruits.push("kiwi");
+        fruits.unshift("banane");
+        alert(fruits);
+    });
 
 })();

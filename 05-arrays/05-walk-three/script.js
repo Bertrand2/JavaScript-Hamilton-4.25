@@ -39,6 +39,11 @@
         },
     ];
 
-    // your code here
+    const button = document.getElementById("run");
+    button.addEventListener("click", ()=>{
+        people.forEach(i => {
+            console.log(`${i.firstname} ${i.lastname.toUpperCase()}`);
+        });
+    });
 
 })();

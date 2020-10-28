@@ -11,6 +11,15 @@
 
 (function() {
 
-    // your code here
+    const required = /\d.*\d/;
+    const field = document.getElementById("pass-one");
+
+    field.addEventListener("keyup", () => {
+        if(field.value.length>=8 && required.test(field.value)){
+            document.getElementById("validity").innerText = "ok";
+        }else{
+            document.getElementById("validity").innerText = "Not ok";
+        }
+    });
 
 })();

@@ -11,6 +11,6 @@
 
 (function() {
 
-    // your code here
+    document.querySelectorAll(".target").forEach(x => x.innerText = "owned");
 
 })();

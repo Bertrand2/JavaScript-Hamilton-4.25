@@ -26,6 +26,10 @@
         "cherry",
     ];
 
-    // your code here
+    const button = document.getElementById("run");
+
+    button.addEventListener("click", ()=>{
+        console.log(fruits.includes("apple")?"yes":"no");
+    });
 
 })();

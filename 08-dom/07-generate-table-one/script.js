@@ -11,6 +11,14 @@
 
 (function() {
 
-    // your code here
+    const table = document.createElement("table");
+    let aaaaaaaaaaaaaaah;
+
+    for (let i=0 ; i<10 ; i++) {
+        aaaaaaaaaaaaaaah = document.createElement("tr");
+        aaaaaaaaaaaaaaah.appendChild( document.createElement("td") );
+        table.appendChild( aaaaaaaaaaaaaaah );
+    }
+    document.getElementById("target").appendChild(table);
 
 })();

@@ -10,7 +10,16 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    // your code here
-
+    ask();
 })();
+
+function ask(){
+    let age = prompt("What's your age?");
+    let gender = prompt("What's your gender?");
+    let town = prompt("Where do you live?");
+    if(confirm(`So you're ${age}, your gender is "${gender}" and you come from ${town}`)){
+        return;
+    }else{
+        ask();
+    }
+}

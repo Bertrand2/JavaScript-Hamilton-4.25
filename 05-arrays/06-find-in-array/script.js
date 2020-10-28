@@ -89,6 +89,18 @@
         },
     ];
 
-    // your code here
+    const button = document.getElementById("run");
+    const firstN = "jean";
+    const lastN = "dupont";
+
+    button.addEventListener("click", ()=>{
+        for (let i=0 ; i<people.length ; i++) {
+            if(people[i].firstname.toLowerCase()===firstN && people[i].lastname.toLowerCase()===lastN){
+                console.log(people[i].email);
+                console.log(i);
+                break;
+            }
+        }
+    });
 
 })();

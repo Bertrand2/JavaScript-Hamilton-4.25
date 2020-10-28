@@ -12,20 +12,25 @@
 (function() {
 
     var fruits = [
-        "pomme",
-        "poire",
-        "fraise",
-        "tomate",
+        "apple",
+        "pear",
+        "raspberry",
+        "tomatos",
         "kiwi",
-        "banane",
+        "banana",
         "orange",
-        "mandarine",
+        "mandarin",
         "durian",
-        "pêche",
-        "raisin",
-        "cerise",
+        "peache",
+        "grap",
+        "cherry",
     ];
 
-    // your code here
+    const button = document.getElementById("run");
+    button.addEventListener("click", ()=>{
+        fruits.forEach(i => {
+            console.log(i);
+        });
+    });
 
 })();

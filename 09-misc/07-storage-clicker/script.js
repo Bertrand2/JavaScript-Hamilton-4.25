@@ -11,6 +11,12 @@
 
 (function() {
 
-    // your code here
+    const target = document.getElementById("target");
+    target.innerText = localStorage.getItem("incrementer") || 0;
+
+    document.getElementById("increment").addEventListener("click", () => {
+        ++target.innerText;
+        localStorage.setItem("incrementer",target.innerText)
+    });
 
 })();

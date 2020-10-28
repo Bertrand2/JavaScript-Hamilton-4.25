@@ -10,5 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    const me = {
+        firstname: "Bertrand",
+        lastname: "Dossogne",
+        age: 24,
+        city: "Liège",
+        country: "Belgium"
+    };
+
+    const button = document.getElementById("run");
+
+    button.addEventListener("click", ()=>{
+        console.log(me);
+    });
 })();

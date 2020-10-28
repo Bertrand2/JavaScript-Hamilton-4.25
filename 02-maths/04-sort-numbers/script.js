@@ -11,11 +11,13 @@
 
 (function() {
 
-    // to get the value of an input: document.getElementById("element-id").value
+    const numbers = document.getElementById("numbers").value.split(", ").map( x => parseInt(x) );
 
     document.getElementById("run").addEventListener("click", function() {
 
-        // your code here
+        alert(numbers.sort(function(a, b) {
+            return a - b;
+        }));
 
     });
 

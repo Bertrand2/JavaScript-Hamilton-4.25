@@ -26,5 +26,18 @@
         os: "linux",
         user: null,
     };
-    // your code here
+    
+    const button = document.getElementById("run");
+
+    button.addEventListener("click", ()=>{
+        computers.forEach(i => {
+            if(i.available!==false){
+                i.available = defaultProps.available;
+            }
+            i.os = i.os||defaultProps.os; 
+            i.user = i.user||null;
+        });
+        console.log(computers);
+    });
+
 })();

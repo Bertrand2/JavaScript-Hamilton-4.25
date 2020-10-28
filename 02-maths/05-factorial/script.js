@@ -11,11 +11,21 @@
 
 (function() {
     
-    // to get the value of an input: document.getElementById("element-id").value
+    let input;
 
     document.getElementById("run").addEventListener("click", function() {
 
-        // your code here
+        function factorial(number){
+            if(number===0){
+                return 1;
+            }else{
+                return number*factorial(number-1);
+            }
+        }
+
+        input = parseInt(document.getElementById("number").value);
+        console.log(input);
+        if(input || input===0) alert(factorial(input));
 
     });
 

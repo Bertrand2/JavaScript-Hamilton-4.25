@@ -12,8 +12,10 @@
 (function() {
 
     document.getElementById("run").addEventListener("click", function() {
-
-        // your code here
+        let i = 1;
+        do{
+            alert(i**2);
+        }while(++i**2<21)
 
     });
 

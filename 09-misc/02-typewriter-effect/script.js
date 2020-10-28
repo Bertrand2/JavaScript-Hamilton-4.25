@@ -11,6 +11,20 @@
 
 (function() {
 
-    // your code here
+    const target = document.getElementById("target");
+    const text = [...target.innerText].map(x => `<span>${x}</span>`).join("");
+    target.innerHTML = text;
+    target.style.visibility = "hidden";
+
+    let jardin = 0;
+
+    const interval = setInterval(revealLetter, 100);
+    
+    function revealLetter(){
+        target.childNodes[jardin++].style.visibility = "visible";
+        if(jardin >= target.childNodes.length){
+            clearInterval(interval);
+        }
+    }
 
 })();

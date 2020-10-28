@@ -11,6 +11,45 @@
 
 (function() {
 
-    // your code here
+
+    const button = document.getElementById("run");
+
+    button.addEventListener("click", ()=>{
+        
+        console.time("test");
+
+        let numbers = [...Array(10)].map(x => Math.ceil(Math.random()*100));
+        let sum = 0;
+    
+        for (let i=0 ; i<numbers.length ; i++) {
+            document.getElementById(`n-${i+1}`).innerText = numbers[i];
+            sum += numbers[i];
+        }
+        document.getElementById(`min`).innerText = Math.min(...numbers);
+        document.getElementById(`max`).innerText = Math.max(...numbers);
+        document.getElementById(`sum`).innerText = sum;
+        document.getElementById(`average`).innerText = sum/numbers.length;
+
+        console.timeEnd("test");
+
+        
+        // console.time("test");
+
+        // let numbers = [...Array(10)].map(x => Math.ceil(Math.random()*100));
+    
+        // for (let i=0 ; i<numbers.length ; i++) {
+        //     document.getElementById(`n-${i+1}`).innerText = numbers[i];
+        // }
+        // document.getElementById(`min`).innerText = Math.min(...numbers);
+        // document.getElementById(`max`).innerText = Math.max(...numbers);
+        // document.getElementById(`sum`).innerText = numbers.reduce((acc, val) => acc + val);
+        // document.getElementById(`average`).innerText = numbers.reduce((acc, val) => acc + val)/numbers.length;
+
+        // console.timeEnd("test");
+
+
+    });
+
+
 
 })();

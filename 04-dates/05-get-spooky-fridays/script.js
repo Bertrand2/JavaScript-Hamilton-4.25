@@ -11,6 +11,21 @@
 
 (function() {
 
-    // your code here
+    const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const button = document.getElementById("run");
+    const yearHTML = document.getElementById("year");
+    let date;
+
+    button.addEventListener("click", ()=>{
+        let year = yearHTML.value;
+        let months = [];
+        for (let i=1 ; i<13 ; i++){
+            date = new Date(year, i, 13);
+            if(date.getDay() == 5){
+                months.push(monthNames[i]);
+            }
+        }
+        alert(months);
+    })
 
 })();

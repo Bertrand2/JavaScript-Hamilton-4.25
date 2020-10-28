@@ -10,10 +10,28 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
+    const opOne = document.getElementById("op-one");
+    const opTwo = document.getElementById("op-two");
 
     const performOperation = operation => {
-        // perform the operation
+        let result;
+        switch(operation){
+            case "addition":
+                result = parseInt(opOne.value)+parseInt(opTwo.value);
+                break;
+            case "substraction":
+                result = parseInt(opOne.value)-parseInt(opTwo.value);
+                break;
+            case "multiplication":
+                result = parseInt(opOne.value)*parseInt(opTwo.value);
+                break;
+            case "division":
+                result = parseInt(opOne.value)/parseInt(opTwo.value);
+                break;
+            default:
+                result = "wrong operation selected !";
+        }
+        alert(result);
     };
 
     Array.from(document.querySelectorAll("button.operator")).forEach($btn =>

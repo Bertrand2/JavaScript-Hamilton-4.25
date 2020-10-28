@@ -11,6 +11,9 @@
 
 (function() {
 
-    // your code here
-
+    const image = document.createElement("img");
+    image.src = document.getElementById("source").getAttribute("data-image");
+    document.getElementById("target").appendChild(image);
+    document.getElementById("source").remove();
+    
 })();

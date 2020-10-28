@@ -10,21 +10,22 @@
 // You will have time to focus on it later.
 
 (function() {
-    // to get the value of an input: document.getElementById("element-id").value
+    const opOne = document.getElementById("op-one");
+    const opTwo = document.getElementById("op-two");
 
     document.getElementById("addition").addEventListener("click", function() {
-        // perform an addition
+        alert(parseInt(opOne.value)+parseInt(opTwo.value));
     });
 
     document.getElementById("substraction").addEventListener("click", function() {
-        // perform an substraction
+        alert(parseInt(opOne.value)-parseInt(opTwo.value));
     });
 
     document.getElementById("multiplication").addEventListener("click", function() {
-        // perform an multiplication
+        alert(parseInt(opOne.value)*parseInt(opTwo.value));
     });
 
     document.getElementById("division").addEventListener("click", function() {
-        // perform an division
+        alert(parseInt(opOne.value)/parseInt(opTwo.value));
     });
 })();

@@ -11,6 +11,14 @@
 
 (function() {
 
-    // your code here
+    const number = Math.ceil(Math.random()*100);
+    let guesses = 0;
+    let guess = prompt("Yo bro, what's the number ?");
 
+    while(number-guess){
+        guesses++;
+        number>guess ? guess=prompt("Go higher Bro !") : guess=prompt("You're too high Bro !") ;
+    }
+
+    alert(`In ${++guesses} guesses ? You're a champ, Bro !`)
 })();

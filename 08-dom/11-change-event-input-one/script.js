@@ -11,6 +11,6 @@
 
 (function() {
 
-    // your code here
+    document.getElementById("pass-one").setAttribute("maxLength","10");
 
 })();
