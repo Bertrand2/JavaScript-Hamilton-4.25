@@ -11,34 +11,21 @@
 
 (function() {
 
-    const partOne = document.getElementById("part-one");
-    const partTwo = document.getElementById("part-two");
-    const partThree = document.getElementById("part-three");
-    const partFour = document.getElementById("part-four");
+    const parts = [
+        document.getElementById("part-one"),
+        document.getElementById("part-two"),
+        document.getElementById("part-three"),
+        document.getElementById("part-four")
+    ];
 
-    partOne.addEventListener("click", () => {
-        partOne.innerText===partOne.getAttribute("data-max") ? partOne.innerText = partOne.getAttribute("data-min") : ++partOne.innerText ;
-        partOne.innerText = ("0"+partOne.innerText).slice(-2);
+    parts.forEach( (x,i) => x.addEventListener("click", () => {
+        x.innerText===x.getAttribute("data-max") ? x.innerText = x.getAttribute("data-min") : ++x.innerText ;
+        x.innerText = i ? ("0"+x.innerText).slice(-2) : ("0"+x.innerText).slice(-3);
         updateDisplay();
-    });
-    partTwo.addEventListener("click", () => {
-        partTwo.innerText===partTwo.getAttribute("data-max") ? partTwo.innerText = partTwo.getAttribute("data-min") : ++partTwo.innerText ;
-        partTwo.innerText = ("0"+partTwo.innerText).slice(-2);
-        updateDisplay();
-    });
-    partThree.addEventListener("click", () => {
-        partThree.innerText===partThree.getAttribute("data-max") ? partThree.innerText = partThree.getAttribute("data-min") : ++partThree.innerText ;
-        partThree.innerText = ("0"+partThree.innerText).slice(-2);
-        updateDisplay();
-    });
-    partFour.addEventListener("click", () => {
-        partFour.innerText===partFour.getAttribute("data-max") ? partFour.innerText = partFour.getAttribute("data-min") : ++partFour.innerText ;
-        partFour.innerText = ("0"+partFour.innerText).slice(-2);
-        updateDisplay();
-    });
+    }));
 
     function updateDisplay(){
-        document.getElementById("target").innerText = `+${("0"+partOne.innerText).slice(-2)}${("0"+partTwo.innerText).slice(-2)}${("0"+partThree.innerText).slice(-2)}${("0"+partFour.innerText).slice(-2)}`;
+        document.getElementById("target").innerText = `+${parts[0].innerText}${parts[1].innerText}${parts[2].innerText}${parts[3].innerText}`;
     }
 
 })();
