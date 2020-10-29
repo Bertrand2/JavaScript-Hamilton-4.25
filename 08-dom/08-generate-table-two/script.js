@@ -12,12 +12,11 @@
 (function() {
 
     const emmanuelmacron = document.createElement("table");
-    let aaaaaaaaaaaaaaah;
-    let oooooooooooooooh;
+    let aaaaaaaaaaaaaaah, oooooooooooooooh;
 
     for (let i=0 ; i<10 ; i++) {
         aaaaaaaaaaaaaaah = document.createElement("tr");
-
+        
         for (let j=0 ; j <10 ; j++) {
             oooooooooooooooh = document.createElement("td");
             oooooooooooooooh.innerText = (i+1)*(j+1);
