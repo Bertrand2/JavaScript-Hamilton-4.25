@@ -16,31 +16,102 @@
     const partThree = document.getElementById("part-three");
     const partFour = document.getElementById("part-four");
 
-    document.getElementById("fix-part-one").addEventListener("click", () => {
-        partOne.value = +partOne.getAttribute("data-min") + Math.floor( Math.random()*(partOne.getAttribute("data-max")-partOne.getAttribute("data-min")+1));
-        partOne.value = ("0"+partOne.value).slice(-3);
-        updateDisplay();
+    const fixPartOne = document.getElementById("fix-part-one");
+    const fixPartTwo = document.getElementById("fix-part-two");
+    const fixPartThree = document.getElementById("fix-part-three");
+    const fixPartFour = document.getElementById("fix-part-four");
+
+    const intervalTime = 40;
+
+    let oneRunning = true, twoRunning = true, threeRunning = true, fourRunning = true;
+    let partOneDisplay = "___", partTwoDisplay = "__" , partThreeDisplay = "__" , partFourDisplay = "__";
+    let intervals = [
+        setInterval(slotMachine, 50, partOne),
+        setInterval(slotMachine, 50, partTwo),
+        setInterval(slotMachine, 50, partThree),
+        setInterval(slotMachine, 50, partFour)
+    ];
+    updateDisplay();
+
+    fixPartOne.addEventListener("click", () => {
+        if(oneRunning){
+            clearInterval(intervals[0]);
+            //partOne.value = generateValue(+partOne.getAttribute("data-min"), +partOne.getAttribute("data-max"), 3);
+            partOneDisplay = partOne.value;
+            updateDisplay();
+            oneRunning = false;
+            fixPartOne.innerHTML = "Start";
+        }else{
+            partOneDisplay = "___";
+            updateDisplay();
+            oneRunning = true;
+            fixPartOne.innerHTML = "Stop";
+            intervals[0] = setInterval(slotMachine, intervalTime, partOne);
+        }
     });
 
-    document.getElementById("fix-part-two").addEventListener("click", () => {
-        partTwo.value = +partTwo.getAttribute("data-min") + Math.floor( Math.random()*(partTwo.getAttribute("data-max")-partTwo.getAttribute("data-min")+1));
-        partTwo.value = ("0"+partTwo.value).slice(-2);
-        updateDisplay();
+    fixPartTwo.addEventListener("click", () => {
+        if(twoRunning){
+            clearInterval(intervals[1]);
+            //partTwo.value = generateValue(+partTwo.getAttribute("data-min"), +partTwo.getAttribute("data-max"), 2);
+            partTwoDisplay = partTwo.value;
+            updateDisplay();
+            twoRunning = false;
+            fixPartTwo.innerHTML = "Start";
+        }else{
+            partTwoDisplay = "___";
+            updateDisplay();
+            twoRunning = true;
+            fixPartTwo.innerHTML = "Stop";
+            intervals[1] = setInterval(slotMachine, intervalTime, partTwo);
+        }
     });
 
-    document.getElementById("fix-part-three").addEventListener("click", () => {
-        partThree.value = +partThree.getAttribute("data-min") + Math.floor( Math.random()*(partThree.getAttribute("data-max")-partThree.getAttribute("data-min")+1));
-        partThree.value = ("0"+partThree.value).slice(-2);
-        updateDisplay();
+    fixPartThree.addEventListener("click", () => {
+        if(threeRunning){
+            clearInterval(intervals[2]);
+            //partThree.value = generateValue(+partThree.getAttribute("data-min"), +partThree.getAttribute("data-max"), 2);
+            partThreeDisplay = partThree.value;
+            updateDisplay();
+            threeRunning = false;
+            fixPartThree.innerHTML = "Start";
+        }else{
+            partThreeDisplay = "___";
+            updateDisplay();
+            threeRunning = true;
+            fixPartThree.innerHTML = "Stop";
+            intervals[2] = setInterval(slotMachine, intervalTime, partThree);
+        }
     });
 
-    document.getElementById("fix-part-four").addEventListener("click", () => {
-        partFour.value = +partFour.getAttribute("data-min") + Math.floor( Math.random()*(partFour.getAttribute("data-max")-partFour.getAttribute("data-min")+1));
-        partFour.value = ("0"+partFour.value).slice(-2);
-        updateDisplay();
+    fixPartFour.addEventListener("click", () => {
+        if(fourRunning){
+            clearInterval(intervals[3]);
+            //partFour.value = generateValue(+partFour.getAttribute("data-min"), +partFour.getAttribute("data-max"), 2);
+            partFourDisplay = partFour.value;
+            updateDisplay();
+            fourRunning = false;
+            fixPartFour.innerHTML = "Start";
+        }else{
+            partFourDisplay = "___";
+            updateDisplay();
+            fourRunning = true;
+            fixPartFour.innerHTML = "Stop";
+            intervals[3] = setInterval(slotMachine, intervalTime, partFour);
+        }
     });
 
     function updateDisplay(){
-        document.getElementById("target").innerText = `+${("0"+partOne.value).slice(-3)}${("0"+partTwo.value).slice(-2)}${("0"+partThree.value).slice(-2)}${("0"+partFour.value).slice(-2)}`;
+        document.getElementById("target").innerText = `+0${("0"+partOneDisplay).slice(-3)}${("0"+partTwoDisplay).slice(-2)}${("0"+partThreeDisplay).slice(-2)}${("0"+partFourDisplay).slice(-2)}`;
+    }
+
+    function generateValue(min, max, length){
+        let randomNumber = min + Math.floor( Math.random()*(max-min+1));
+        randomNumber = ("0"+randomNumber).slice(-length);
+        return randomNumber;
+    }
+
+    function slotMachine(part){
+        part.getAttribute("data-max")==part.value ? part.value = part.getAttribute("data-min") : part.value++;
     }
 })();

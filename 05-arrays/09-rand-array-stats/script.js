@@ -12,9 +12,9 @@
 (function() {
 
 
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         
         console.time("test");
 

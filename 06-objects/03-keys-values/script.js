@@ -19,9 +19,9 @@
         status: "married",
     };
     
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         console.log(Object.keys(person));
         console.log(Object.values(person));
     });

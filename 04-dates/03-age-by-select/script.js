@@ -19,9 +19,9 @@
     let noBirthday = 0;
     let age;
     const date = new Date();
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         noBirthday = 0;
         dobDay = document.getElementById("dob-day").value;
         dobMonth = document.getElementById("dob-month").value;

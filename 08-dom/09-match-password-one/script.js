@@ -13,9 +13,9 @@
 
     const passOne = document.getElementById("pass-one");
     const passTwo = document.getElementById("pass-two");
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", () => {
+    document.getElementById("run").addEventListener("click", () => {
         if(passOne.value !== passTwo.value){
             passOne.style.borderColor = "red";
             passTwo.style.borderColor = "red";

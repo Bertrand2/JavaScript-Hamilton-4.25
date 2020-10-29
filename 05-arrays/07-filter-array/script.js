@@ -89,9 +89,9 @@
         },
     ];
 
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         let newPeople = people.filter(person => person.age>=18);
         console.log(newPeople);
     });

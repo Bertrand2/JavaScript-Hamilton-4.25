@@ -23,9 +23,9 @@
         "cherry",
     ]);
 
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         fruits.delete("apple");
         fruits.delete("cherry");
         fruits.add("banana");

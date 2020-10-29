@@ -21,9 +21,9 @@
         }
     }
         
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         let person = new Person("Jonas","Crabe");
         person.sayHello();
     });

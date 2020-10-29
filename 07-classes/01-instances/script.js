@@ -18,9 +18,9 @@
     }
 
         
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         console.log(new Cat("Skitty",9));
         console.log(new Cat("Pixel",6));
     });

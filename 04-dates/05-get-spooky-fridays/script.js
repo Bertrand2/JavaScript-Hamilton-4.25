@@ -12,11 +12,11 @@
 (function() {
 
     const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    const button = document.getElementById("run");
+    
     const yearHTML = document.getElementById("year");
     let date;
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         let year = yearHTML.value;
         let months = [];
         for (let i=1 ; i<13 ; i++){

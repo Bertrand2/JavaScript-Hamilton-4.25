@@ -32,9 +32,9 @@
         static greeting = "Meow";
     }
         
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         const dog = new Dog("MICHELMAMAN");
         const cat = new Cat("THE DESTRUCTOR");
         console.log(dog.sayHello());

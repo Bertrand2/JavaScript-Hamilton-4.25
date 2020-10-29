@@ -13,15 +13,15 @@
 
     const passOne = document.getElementById("pass-one");
     const passTwo = document.getElementById("pass-two");
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", () => {
+    document.getElementById("run").addEventListener("click", () => {
         if(passOne.value !== passTwo.value){
-            passOne.setAttribute("class","error");
-            passTwo.setAttribute("class","error");
+            passOne.classList.add("error");
+            passTwo.classList.add("error");
         }else{
-            passOne.setAttribute("class","");
-            passTwo.setAttribute("class","");
+            passOne.classList.remove("error");
+            passTwo.classList.remove("error");
         }
     });
 })();

@@ -27,9 +27,9 @@
         user: null,
     };
     
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         computers.forEach(i => {
             if(i.available!==false){
                 i.available = defaultProps.available;

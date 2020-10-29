@@ -19,11 +19,10 @@
         "../../_shared/img/map.svg",
     ];
 
-    const button = document.getElementById("next");
     const image = document.getElementsByTagName("img")[0];
     let i = 0;
 
-    button.addEventListener("click", () => {
+    document.getElementById("next").addEventListener("click", () => {
         image.src = gallery[++i % gallery.length];
     });
 

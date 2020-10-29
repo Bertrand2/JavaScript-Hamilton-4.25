@@ -26,8 +26,8 @@
         "cherry",
     ];
 
-    const button = document.getElementById("run");
-    button.addEventListener("click", ()=>{
+    
+    document.getElementById("run").addEventListener("click", ()=>{
         fruits.forEach(i => {
             console.log(i);
         });

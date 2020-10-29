@@ -22,9 +22,9 @@
         "Lucas",
     ]);
 
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         console.log(people.size);
         console.log(people.has("Alexandre"));
     });

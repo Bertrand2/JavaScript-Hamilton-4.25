@@ -89,7 +89,7 @@
         }
     ];
 
-    const button = document.getElementById("run");
+    
 
     const age = [];
 
@@ -97,7 +97,7 @@
         age.push(parseInt(i.age));
     });
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         console.log( age.reduce( (acc , cur) => acc + cur ) );
     });
 

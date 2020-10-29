@@ -12,5 +12,8 @@
 (function() {
 
     document.getElementById("pass-one").setAttribute("maxLength","10");
+    document.getElementById("pass-one").addEventListener("keyup", () => {
+    	document.getElementById("counter").innerText = `${document.getElementById("pass-one").value.length}/10`;
+    })
 
 })();

@@ -13,9 +13,9 @@
 
     const body = document.getElementsByTagName("body")[0];
     const color = document.getElementById("color");
-    const button = document.getElementById("run");
+    
 
-    button.addEventListener("click", ()=>{
+    document.getElementById("run").addEventListener("click", ()=>{
         body.style.backgroundColor = color.value;
     });
 
