@@ -10,7 +10,6 @@
 // You will have time to focus on it later.
 
 (function() {
-
     const target = document.getElementById("target");
     const text = [...target.innerText].map(x => `<span>${x}</span>`).join("");
     let waver = 0;
@@ -27,5 +26,24 @@
         waver+=0.3;
         target.childNodes[0].style.fontSize = `${2 + Math.sin(waver)}rem`;
     }
+
+    /*
+    const target = document.getElementById("target");
+    const text = [...target.innerText].map(x => `<span>${x}</span>`).join("");
+    target.innerHTML = text;
+
+    const sizes = [10, 12, 15, 18, 20, 18, 15, 12];
+
+    let waver = 0;
+
+    setInterval(wave, 100, target);
+
+    function wave(target){
+        target.childNodes.forEach( (x,i) => {
+            x.style.fontSize = `${sizes[(i + waver) % sizes.length]}px`;
+        });
+        waver++;
+    }
+    */    
 
 })();
