@@ -26,10 +26,8 @@
         "cherry",
     ];
 
-    
-
     document.getElementById("run").addEventListener("click", ()=>{
-        console.log(fruits.includes("apple")?"yes":"no");
+        console.log(fruits.includes("apple") ? "yes" : "no");
     });
 
 })();

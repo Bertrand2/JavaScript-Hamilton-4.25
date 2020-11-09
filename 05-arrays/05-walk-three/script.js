@@ -44,6 +44,8 @@
         people.forEach(i => {
             console.log(`${i.firstname} ${i.lastname.toUpperCase()}`);
         });
+        //people.forEach(({firstname}) => {console.log(firstname));
+        });
     });
 
 })();

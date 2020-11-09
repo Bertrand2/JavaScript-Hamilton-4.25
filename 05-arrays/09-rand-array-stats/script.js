@@ -18,13 +18,13 @@
         
         console.time("test");
 
-        let numbers = [...Array(10)].map(x => Math.ceil(Math.random()*100));
+        const numbers = [...Array(10)].map(x => Math.ceil(Math.random()*100));
         let sum = 0;
     
-        for (let i=0 ; i<numbers.length ; i++) {
-            document.getElementById(`n-${i+1}`).innerText = numbers[i];
-            sum += numbers[i];
-        }
+        numbers.forEach((number, i) => {
+            document.getElementById(`n-${i+1}`).innerText = number;
+            sum += number;
+        });
         document.getElementById(`min`).innerText = Math.min(...numbers);
         document.getElementById(`max`).innerText = Math.max(...numbers);
         document.getElementById(`sum`).innerText = sum;

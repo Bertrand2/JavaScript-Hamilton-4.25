@@ -16,7 +16,7 @@
     
 
     function randomColor(){
-        return `rgb(${Math.floor(Math.random()*101)},${Math.floor(Math.random()*101)},${Math.floor(Math.random()*101)})`;
+        return `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`;
     }
 
     document.getElementById("run").addEventListener("click", ()=>{

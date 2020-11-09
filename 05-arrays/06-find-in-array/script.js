@@ -94,13 +94,19 @@
     const lastN = "dupont";
 
     document.getElementById("run").addEventListener("click", ()=>{
-        for (let i=0 ; i<people.length ; i++) {
-            if(people[i].firstname.toLowerCase()===firstN && people[i].lastname.toLowerCase()===lastN){
-                console.log(people[i].email);
+        people.forEach( (person, i) => {
+            if(person.firstname.toLowerCase()===firstN && person.lastname.toLowerCase()===lastN){
+                console.log(person.email);
                 console.log(i);
                 break;
             }
-        }
+        });
+        /*
+        const person = people.find(({firstanme, lastname}) => (firstname.toLowerCase()===firstN && lastname.toLowerCase()===lastN)});
+        const person = people.findIndex(({firstanme, lastname}) => (firstname.toLowerCase()===firstN && lastname.toLowerCase()===lastN)});
+        console.log(person.email);
+        console.log(personIndex);
+        */
     });
 
 })();

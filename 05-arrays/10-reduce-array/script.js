@@ -89,16 +89,8 @@
         }
     ];
 
-    
-
-    const age = [];
-
-    people.forEach(i => {
-        age.push(parseInt(i.age));
-    });
-
     document.getElementById("run").addEventListener("click", ()=>{
-        console.log( age.reduce( (acc , cur) => acc + cur ) );
+        console.log( people.reduce( (acc , {age}) => acc + age , 0 ) );
     });
 
 

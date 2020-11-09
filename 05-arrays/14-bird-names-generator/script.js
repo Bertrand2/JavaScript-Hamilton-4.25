@@ -44,6 +44,6 @@
     document.getElementById("run").addEventListener("click", ()=>{
         let adjectivesArray = [...adjectives];
         let rand = [Math.floor(Math.random()*birds.length) , Math.floor(Math.random()*adjectivesArray.length)];
-        target.innerHTML = `${birds[rand[0]].fem ? "La" : "Le"} ${birds[rand[0]].name} ${adjectivesArray[rand[1]]}${birds[rand[0]].fem ? "e" : ""}`;
+        target.innerText = `L${birds[rand[0]].fem ? "a" : "e"} ${birds[rand[0]].name} ${adjectivesArray[rand[1]]}${birds[rand[0]].fem ? "e" : ""}`;
     });
 })();

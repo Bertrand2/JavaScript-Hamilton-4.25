@@ -13,15 +13,16 @@
     
     let input;
 
+    function factorial(number){
+        if(number===0){
+            return 1;
+        }else{
+            return number*factorial(number-1);
+        }
+    }
+
     document.getElementById("run").addEventListener("click", function() {
 
-        function factorial(number){
-            if(number===0){
-                return 1;
-            }else{
-                return number*factorial(number-1);
-            }
-        }
 
         input = parseInt(document.getElementById("number").value);
         console.log(input);
