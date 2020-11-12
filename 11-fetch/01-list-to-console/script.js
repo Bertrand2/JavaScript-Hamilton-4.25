@@ -10,5 +10,33 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    
+    const asyncCall = async () => {
+        const promise = await fetch("http://localhost:3000/heroes");
+        try {
+
+            //check promise status
+            if (promise.status !== 200) {
+                console.log(`Error ${promise.status}`);
+                return;
+            }
+
+            const heroes = await promise.json()
+            try {
+                console.log(heroes);
+            } catch(e) {
+                console.error(e);
+            }
+        
+        } catch(e) {
+            console.error(e);
+        }
+    }
+
+    document.getElementById("run").addEventListener("click", () => {
+        
+        asyncCall();
+
+    });
+
 })();
