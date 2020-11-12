@@ -11,20 +11,13 @@
 
 (function() {
 
-    const partOne = document.getElementById("part-one");
-    const partTwo = document.getElementById("part-two");
-    const partThree = document.getElementById("part-three");
-    const partFour = document.getElementById("part-four");
-
-    const fixPartOne = document.getElementById("fix-part-one");
-    const fixPartTwo = document.getElementById("fix-part-two");
-    const fixPartThree = document.getElementById("fix-part-three");
-    const fixPartFour = document.getElementById("fix-part-four");
+    const inputs = [...document.querySelectorAll("input")];
+    const buttons = [...document.querySelectorAll("button")];
 
     const intervalTime = 40;
 
-    let oneRunning = true, twoRunning = true, threeRunning = true, fourRunning = true;
-    let partOneDisplay = "___", partTwoDisplay = "__" , partThreeDisplay = "__" , partFourDisplay = "__";
+    let running = [...Array(4)].map(x => true);
+    let display = ["___", "__", "__", "__";
     let intervals = [
         setInterval(slotMachine, 50, partOne),
         setInterval(slotMachine, 50, partTwo),
@@ -32,6 +25,24 @@
         setInterval(slotMachine, 50, partFour)
     ];
     updateDisplay();
+
+    buttons.forEach((button,i) => {
+        button.addEventListener("click", () => {
+            if(running[i]){
+                clearInterval(intervals[i]);
+                partOneDisplay = partOne.value;
+                updateDisplay();
+                oneRunning = false;
+                fixPartOne.innerHTML = "Start";
+            }else{
+                partOneDisplay = "___";
+                updateDisplay();
+                oneRunning = true;
+                fixPartOne.innerHTML = "Stop";
+                intervals[0] = setInterval(slotMachine, intervalTime, partOne);
+            }
+        });
+    });
 
     fixPartOne.addEventListener("click", () => {
         if(oneRunning){

@@ -15,9 +15,9 @@
     const field = document.getElementById("pass-one");
 
     field.addEventListener("keyup", () => {
-        if(field.value.length>=8 && required.test(field.value)){
+        if(field.value.length>=8 && required.test(field.value)) {
             document.getElementById("validity").innerText = "ok";
-        }else{
+        } else {
             document.getElementById("validity").innerText = "Not ok";
         }
     });

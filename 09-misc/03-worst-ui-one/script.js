@@ -15,7 +15,7 @@
     const slider = document.getElementById("slider");
 
     slider.addEventListener("mousemove", () => {
-        target.innerText = "0"+slider.value;
+        target.innerText = `0${slider.value}`;
     });
 
 })();

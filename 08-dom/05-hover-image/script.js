@@ -10,15 +10,16 @@
 // You will have time to focus on it later.
 
 (function() {
-    const base = document.getElementsByTagName("img")[0].src;
-    const alt = document.getElementsByTagName("img")[0].getAttribute("data-hover");
+    const img = document.querySelector("img")
+    const base = img.src;
+    const alt = img.getAttribute("data-hover");
 
-    document.getElementsByTagName("img")[0].addEventListener("mouseover", () => {
-        document.getElementsByTagName("img")[0].src = alt;
+    img.addEventListener("mouseover", () => {
+        img.src = alt;
     });
 
-    document.getElementsByTagName("img")[0].addEventListener("mouseout", () => {
-        document.getElementsByTagName("img")[0].src = base;
+    img.addEventListener("mouseout", () => {
+        img.src = base;
     });
 
 })();

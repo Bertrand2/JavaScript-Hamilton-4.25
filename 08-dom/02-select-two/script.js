@@ -11,6 +11,7 @@
 
 (function() {
 
-    document.getElementsByTagName("p")[1].innerText = "owned";
+    document.querySelector("#target").innerText = "owned";
+    //document.getElementsByTagName("p")[1].innerText = "owned";
 
 })();

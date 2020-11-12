@@ -12,14 +12,13 @@
 (function() {
 
     const emmanuelmacron = document.createElement("table");
-    let aaaaaaaaaaaaaaah, oooooooooooooooh;
 
     for (let i=0 ; i<10 ; i++) {
-        aaaaaaaaaaaaaaah = document.createElement("tr");
+        const aaaaaaaaaaaaaaah = document.createElement("tr");
         
         for (let j=0 ; j <10 ; j++) {
-            oooooooooooooooh = document.createElement("td");
-            oooooooooooooooh.innerText = (i+1)*(j+1);
+            const oooooooooooooooh = document.createElement("td");
+            oooooooooooooooh.innerHTML = `${i+1} &times; ${j+1} =<br><strong>${(i+1)*(j+1)}</strong>`;
             aaaaaaaaaaaaaaah.appendChild(oooooooooooooooh);
         }
         emmanuelmacron.appendChild( aaaaaaaaaaaaaaah );

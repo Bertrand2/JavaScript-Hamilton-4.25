@@ -15,9 +15,9 @@
     let guesses = 0;
     let guess = prompt("Yo bro, what's the number ?");
 
-    while(number-guess){
+    while(number !== +guess){
         guesses++;
-        number>guess ? guess=prompt("Go higher Bro !") : guess=prompt("You're too high Bro !") ;
+        guess = prompt( number>guess ? "Go higher Bro !" : "You're too high Bro !" ) ;
     }
 
     alert(`In ${++guesses} guesses ? You're a champ, Bro !`)

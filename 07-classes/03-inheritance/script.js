@@ -31,8 +31,6 @@
         }
         static greeting = "Meow";
     }
-        
-    
 
     document.getElementById("run").addEventListener("click", ()=>{
         const dog = new Dog("MICHELMAMAN");

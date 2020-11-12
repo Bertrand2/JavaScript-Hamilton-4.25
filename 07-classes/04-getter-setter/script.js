@@ -18,7 +18,7 @@
         }
 
         set name(name){
-            [this.firstname, this.lastname] = name.split(" ")[0];
+            [this.firstname, this.lastname] = name.split(" ");
         }
 
         get name(){

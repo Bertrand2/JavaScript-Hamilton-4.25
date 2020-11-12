@@ -16,10 +16,10 @@
     
 
     document.getElementById("run").addEventListener("click", () => {
-        if(passOne.value !== passTwo.value){
+        if(passOne.value !== passTwo.value) {
             passOne.classList.add("error");
             passTwo.classList.add("error");
-        }else{
+        } else {
             passOne.classList.remove("error");
             passTwo.classList.remove("error");
         }

@@ -10,10 +10,12 @@
 // You will have time to focus on it later.
 
 (function() {
-
-    document.getElementById("pass-one").setAttribute("maxLength","10");
-    document.getElementById("pass-one").addEventListener("keyup", () => {
-    	document.getElementById("counter").innerText = `${document.getElementById("pass-one").value.length}/10`;
+    const input = document.getElementById("pass-one");
+    const counter = document.getElementById("counter");
+    
+    input.setAttribute("maxLength","10");
+    input.addEventListener("keyup", () => {
+    	counter.innerText = `${input.value.length}/10`;
     })
 
 })();
