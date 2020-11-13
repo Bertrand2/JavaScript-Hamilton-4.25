@@ -10,7 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-
+/*
     document.getElementById("run").addEventListener("click", () => {
         
         const postsPromise = window.lib.getPosts();
@@ -20,7 +20,7 @@
         });
         postsPromise.then((postsValue) => {
             let i = 0;
-            postsValue.forEach(post => {
+            postsValue.forEach((post) => {
                 const commentsPromise = window.lib.getComments(post.id);
     
                 commentsPromise.catch((commentsValue) => {
@@ -35,5 +35,25 @@
             });
         });
     });
+*/
+    document.getElementById("run").addEventListener("click", () => {
+            
+        const postsPromise = window.lib.getPosts();
 
+        postsPromise.catch((postsValue) => {
+            console.error(postsValue);
+        });
+        postsPromise.then((postsValue) => {
+            let total = 0;
+            Promise.all(postsValue.map((post) => window.lib.getComments(post.id)))
+            .then((commentsArray) => {
+                commentsArray.forEach((comments) => {
+                    postsValue[total++].comments = comments;
+                    if(total === postsValue.length){
+                        console.log(postsValue);
+                    }
+                });
+            });
+        });
+    });
 })();
